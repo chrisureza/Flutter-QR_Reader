@@ -27,6 +27,23 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.delete_forever),
             onPressed: scansBloc.deleteAllScans,
           ),
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(
+                  value: 'about',
+                  child: Text('About'),
+                ),
+              ];
+            },
+            onSelected: (result) {
+              switch (result) {
+                case 'about':
+                  Navigator.pushNamed(context, 'about');
+                  break;
+              }
+            },
+          ),
         ],
       ),
       body: _callPage(currentIndex),
