@@ -5,7 +5,7 @@ import 'package:qr_reader_app/src/utils/utils.dart' as utils;
 import '../models/scan_model.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:qr_reader_app/src/bloc/scans_bloc.dart';
-import 'package:qr_reader_app/src/pages/directions_page.dart';
+import 'package:qr_reader_app/src/pages/directions_list_page.dart';
 import 'package:qr_reader_app/src/pages/maps_list_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -41,24 +41,21 @@ class _HomePageState extends State<HomePage> {
   }
 
   _scanQR(BuildContext context) async {
+    // Testing values:
     // https://chrisureza.com
     // geo:9.915461103865884,-84.17937770327457
 
-    String futureString = 'https://chrisureza.com';
+    String futureString;
 
-    // try {
-    //   futureString = await BarcodeScanner.scan();
-    // } catch (e) {
-    //   futureString = e.toString();
-    // }
+    try {
+      futureString = await BarcodeScanner.scan();
+    } catch (e) {
+      futureString = e.toString();
+    }
 
     if (futureString != null) {
       final scan = ScanModel(value: futureString);
       scansBloc.addScan(scan);
-
-      final scan2 =
-          ScanModel(value: 'geo:40.724233047051705,-74.00731459101564');
-      scansBloc.addScan(scan2);
 
       if (Platform.isIOS) {
         Future.delayed(Duration(milliseconds: 750), () {
@@ -75,7 +72,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return MapsListPage();
       case 1:
-        return DirectionsPage();
+        return DirectionsListPage();
       default:
         return MapsListPage();
     }
@@ -95,7 +92,7 @@ class _HomePageState extends State<HomePage> {
           title: Text('Map'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.brightness_5),
+          icon: Icon(Icons.cloud_queue),
           title: Text('Directions'),
         ),
       ],

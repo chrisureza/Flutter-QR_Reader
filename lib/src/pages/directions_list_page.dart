@@ -3,14 +3,14 @@ import 'package:qr_reader_app/src/bloc/scans_bloc.dart';
 import 'package:qr_reader_app/src/utils/utils.dart' as utils;
 import '../models/scan_model.dart';
 
-class MapsListPage extends StatelessWidget {
+class DirectionsListPage extends StatelessWidget {
   final scansBloc = ScansBloc();
 
   @override
   Widget build(BuildContext context) {
     scansBloc.getScans();
     return StreamBuilder(
-      stream: scansBloc.scansStreamGeo,
+      stream: scansBloc.scansStreamHttp,
       builder: (BuildContext context, AsyncSnapshot<List<ScanModel>> snapshot) {
         if (snapshot.hasData) {
           final scans = snapshot.data;
@@ -38,7 +38,7 @@ class MapsListPage extends StatelessWidget {
         onDismissed: (direction) => scansBloc.deleteScan(scans[i].id),
         child: ListTile(
           leading: Icon(
-            Icons.map,
+            Icons.cloud_queue,
             color: Theme.of(context).primaryColor,
           ),
           title: Text(scans[i].value),
