@@ -1,16 +1,13 @@
-# qr_reader_app
+# Flutter QR Reader
 
-A new Flutter project.
+These is a Flutter project that can scan QR codes for Webpages and Geolocations, it uses Streams and Streams transformers for managing the data, SQL lite for saving data in the app and also an API for displayin maps, as well as many other options that makes it a more complex app.
+
+The QR code to scan can be generated at this page: https://www.qrcode.es/es/generador-qr-code/
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This Project is based on an example made by Fernando Herrera in this course (https://fernando-herrera.com/#/curso/flutter), however the version in this repo is different from the one it is based, the code is structured differently and have some new improvements made by myself.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
+For help getting started with Flutter, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
