@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('QR Scanner'),
+        title: Text('QR Reader'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.delete_forever),

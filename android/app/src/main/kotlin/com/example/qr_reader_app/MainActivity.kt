@@ -1,4 +1,4 @@
-package com.example.qr_reader_app
+package com.chrisureza.qr_reader_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

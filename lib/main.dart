@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         'map': (BuildContext context) => MapPage(),
         'about': (BuildContext context) => AboutPage(),
       },
-      theme: ThemeData(primaryColor: Colors.deepPurple),
+      theme: ThemeData(primaryColor: Color.fromRGBO(0, 92, 167, 1.0)),
     );
   }
 }
